@@ -6,6 +6,14 @@ pipeline {
                 sh 'npm --version'
             }
         }
+        
+        
+        stage('Sanity check') {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+        }
+        
     }
     post {
         always {
